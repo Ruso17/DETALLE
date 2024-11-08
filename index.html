@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Metadatos importantes -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Página de ejemplo con tarjetas interactivas con fondo e imágenes de hover.">
+    
+    <!-- Título de la página -->
+    <title>DETALLE</title>
+    
+    <!-- Icono de la página (favicon) -->
+    <link rel="icon" href="icono.ico">
+    
+    <!-- Estilos CSS dentro del archivo HTML -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500&display=swap');
+
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+            font-family: 'Nunito', sans-serif;
+            background: #151F28;
+            min-height: 100vh;
+            padding-top: 100px;
+            flex-wrap: wrap; /* Permite que las tarjetas se ajusten en la pantalla */
+        }
+
+        .card1, .card2, .card3, .card4, .card5 {
+            width: 250px;
+            height: 350px;
+            border-radius: 5px;
+            position: relative;
+            cursor: pointer;
+            border: 1px solid white;
+            transform-style: preserve-3d;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card1 {
+            background-image: url('5.jpg');
+        }
+
+        .card2 {
+            background-image: url("./353.jpg");
+        }
+
+        .card3 {
+            background-image: url('3.jpg'); /* Añade la imagen de fondo */
+        }
+
+        .card4 {
+            background-image: url('4.jpg'); /* Añade la imagen de fondo */
+        }
+
+        .card5 {
+            background-image: url('8.jpg'); /* Añade la imagen de fondo */
+        }
+
+        /* Estilos comunes para los textos */
+        h1 {
+            color: white;
+            width: 100%;
+            position: absolute;
+            bottom: 10px;
+            text-align: center;
+            font-size: 25px;
+            transition: 0.5s;
+        }
+
+        .hover-image-spider, .hover-image-iron, .hover-image-iron2, .hover-image-spider2, .hover-image-spider3, .hover-image-spider4 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            transition: 0.6s;
+        }
+
+        .hover-image-spider {
+            background-image: url('./5_hover.png');
+        }
+
+        .hover-image-iron {
+            background-image: url('./353_hover.png');
+        }
+
+        /* Aquí agregamos nuevas imágenes de hover para las otras tarjetas */
+        .hover-image-spider2 {
+            background-image: url('./3_hover.png');
+        }
+
+        .hover-image-spider3 {
+            background-image: url('./4_hover.png');
+        }
+
+        /* Nuevo hover para la tarjeta 5 */
+        .hover-image-spider4 {
+            background-image: url('./8_hover.png');
+        }
+
+        /* Estilos para los hover */
+        .card1:hover {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("./5.jpg");
+        }
+
+        .card2:hover {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("./353.jpg");
+        }
+
+        .card3:hover {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("3.jpg");
+        }
+
+        .card4:hover {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("4.jpg");
+        }
+
+        .card5:hover {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("8.jpg");
+        }
+
+        .card1:hover .hover-image-spider, .card2:hover .hover-image-iron,
+        .card3:hover .hover-image-spider2, .card4:hover .hover-image-spider3, .card5:hover .hover-image-spider4 {
+            top: 35%;
+            opacity: 1;
+        }
+
+        .card1:hover h1, .card2:hover h1, .card3:hover h1, .card4:hover h1, .card5:hover h1 {
+            font-size: 30px;
+            text-shadow: 0px 0px 10px white, 0px 0px 20px white;
+        }
+
+        /* Media Query para pantallas pequeñas */
+        @media screen and (max-width: 768px) {
+            body {
+                flex-direction: column;
+                gap: 20px;
+                justify-content: center;
+            }
+
+            .card1, .card2, .card3, .card4, .card5 {
+                width: 100%; /* Ajusta el tamaño de las tarjetas para que se vean mejor en pantallas pequeñas */
+                height: 600px; /* Ajuste de altura para que no se vean demasiado alargadas */
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card1">
+        <h1></h1>
+        <div class="hover-image-spider"></div>
+    </div>
+
+    <div class="card2">
+        <h1></h1>
+        <div class="hover-image-iron"></div>
+    </div>
+
+    <div class="card3">
+        <h1></h1>
+        <div class="hover-image-spider2"></div>
+    </div>
+
+    <div class="card4">
+        <h1></h1>
+        <div class="hover-image-spider3"></div>
+    </div>
+
+    <div class="card5">
+        <h1></h1>
+        <div class="hover-image-spider4"></div> <!-- Añadimos la clase hover-image-spider4 aquí -->
+    </div>
+</body>
+</html>
